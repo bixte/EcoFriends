@@ -13,7 +13,7 @@ namespace DataBaseTestLibrary
             int postAddedCount = 0;
             using (EcoFriendsEntities db = new EcoFriendsEntities())
             {
-                postAddedCount = db.AddPost(title, subTitle, description, postText);
+                postAddedCount = db.Posts.Add(new Posts { Title = title,  SubTitle = subTitle, Desctiption = description, PostText = postText }) !=null ? 1 : 0;
             }
             return postAddedCount;
         }
