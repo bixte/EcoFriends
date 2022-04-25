@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfApp2"
+                    >
+    <ControlTemplate TargetType="Button" x:Key="MyBtn">
+        <Border Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Padding="5" Name="SignInBorder">
+            <ContentControl Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="SignInBorder" Property="Background" Value="black"/>
+                <Setter Property="ItemsControl.Foreground" Value="White"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <local:DataProv x:Key="DataProv"/>
+    <ControlTemplate  x:Key="CancelBtn">
+        <Border>
+            <Border.Background>
+                <ImageBrush ImageSource="/img/cancel.png" Stretch="UniformToFill"/>
+            </Border.Background>
+        </Border>
+    </ControlTemplate>
+    <ControlTemplate  x:Key="AcceptBtn">
+        <Border>
+            <Border.Background>
+                <ImageBrush ImageSource="/img/acceptWhite.png" Stretch="UniformToFill"/>
+            </Border.Background>
+        </Border>
+    </ControlTemplate>
+</ResourceDictionary>

@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp2.SignInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Autorisation" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition  Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
+            <Image Source="/img/NatureLogo.png"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel>
+                <TextBlock Text="Логин" Foreground="Gray" />
+                <TextBox BorderThickness="1" Padding="5" Name="LogBox"/>
+            </StackPanel>
+            <StackPanel Margin="0 5 0 0">
+                <TextBlock Text="Пароль" Foreground="Gray"/>
+                <PasswordBox BorderThickness="1" Padding="5" x:Name="PasBox"/>
+            </StackPanel>
+            <Button Width="260" Margin="0 20 0 0" Click="SignInBtn_Click" Template="{StaticResource MyBtn}" Content="Войти"/>
+            <StackPanel Orientation="Horizontal" Margin="0 20" HorizontalAlignment="Center">
+                <TextBlock Text="Еще не имеете аккаунта?" VerticalAlignment="Center" Foreground="Gray"/>
+                <Button Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" Name="SignUpBtn" Click="SignUpBtn_Click">
+                    <Button.Content>
+                        <TextBlock Text="Зарегистрироваться" TextDecorations="Underline"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
